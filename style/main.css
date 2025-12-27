@@ -829,7 +829,7 @@ body {
 
 .letter-paper {
   background: linear-gradient(145deg, #fef9e7 0%, #fdf2d4 50%, #fce8c3 100%);
-  padding: 40px 50px;
+  padding: 65px 50px 40px 50px;
   max-width: 600px;
   width: 95vw;
   border-radius: 5px;
@@ -865,6 +865,46 @@ body {
 
 .letter-paper:hover {
   transform: rotate(0deg) scale(1.01);
+}
+
+/* Scrolling Birthday Message */
+.letter-scrolling-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 30%, #764ba2 60%, #667eea 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 2px 10px rgba(255, 107, 157, 0.4);
+  z-index: 10;
+}
+
+.scrolling-content {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.letter-scrolling-text:hover .scrolling-content {
+  animation-play-state: paused;
 }
 
 /* Decorations - Stamp & Postmark */
