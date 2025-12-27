@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-    <title>🎂 Chúc Mừng Sinh Nhật Hải Phương</title>
+    <title>Chúc Mừng Sinh Nhật Hải Phương</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -21,35 +21,134 @@
 
   <body>
     <!-- Nhạc nền -->
-    <audio class="song" loop autoplay>
+    <audio id="song1" class="song" loop>
       <source src="./music/hpbd.mp4" />
       Trình duyệt của bạn không hỗ trợ audio.
     </audio>
+    <audio id="song2" class="song" loop>
+      <source src="./music/inlove.mp4" />
+      Trình duyệt của bạn không hỗ trợ audio.
+    </audio>
+    <style>
+      /* Toàn bộ section */
+      .letter-section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2; /* nền ngoài nhạt */
+        padding: 40px 16px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Phong bì (chỉ để căn giữa) */
+      .letter-envelope {
+        width: 100%;
+        max-width: 720px;
+      }
+
+      /* Tờ giấy */
+      .letter-paper {
+        background: #fffdf8; /* trắng ngà như giấy */
+        color: #111;
+        padding: 48px 56px;
+        border-radius: 6px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        position: relative;
+        line-height: 1.9;
+      }
+
+      /* Stamp + postmark */
+      .letter-decorations {
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        text-align: right;
+        opacity: 0.85;
+      }
+
+      .stamp {
+        font-size: 28px;
+      }
+
+      .postmark {
+        font-size: 13px;
+        margin-top: 4px;
+        letter-spacing: 1px;
+        font-family: "Courier New", monospace;
+      }
+
+      /* Header */
+      .letter-header {
+        margin-bottom: 28px;
+      }
+
+      .letter-greeting {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Nội dung thư */
+      .letter-body p {
+        margin-bottom: 20px;
+        font-size: 17px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Footer */
+      .letter-footer {
+        margin-top: 48px;
+      }
+
+      .letter-closing {
+        font-size: 16px;
+        margin-bottom: 8px;
+        font-family: "Poppins", sans-serif;
+        font-style: italic;
+      }
+
+      .letter-signature {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Hoa trang trí */
+      .letter-flowers {
+        margin-top: 32px;
+        text-align: center;
+        font-size: 22px;
+        opacity: 0.8;
+      }
+
+      .letter-flowers span {
+        margin: 0 6px;
+      }
+    </style>
 
     <div class="container">
       <!-- 1. Chào -->
       <div class="one">
         <h1 class="one">
           Chào
-          <span id="name">Hải Phương</span>!
+          <span id="name">Hải Phương</span>
         </h1>
-        <p class="two" id="greetingText">
-          Chúc chị tuổi mới bình an và tràn đầy năng lượng 💖
-        </p>
+        <p class="two" id="greetingText">Hôm nay là ngày đặc biệt của chị</p>
       </div>
 
       <!-- 2. Thông báo sinh nhật -->
       <div class="three">
-        <p>Hôm nay là một ngày đặc biệt 🎂 Hãy tận hưởng thật trọn vẹn!</p>
+        <p>Happy Birthday!</p>
       </div>
 
       <!-- 3. Tin nhắn -->
       <div class="four">
         <div class="text-box">
           <p class="hbd-chatbox">
-            Chúc chị luôn bình tĩnh, tự tin, quyết đoán, xinh đẹp và tài giỏi
-            hơn mỗi ngày. Mong mọi điều tốt đẹp nhất sẽ đến với người chị mình
-            crush 💕
+            Chúc chị một tuổi mới thật nhiều sức khỏe, bình an và luôn giữ được
+            nụ cười ấy. Mong chị sẽ đạt được những điều mình mong muốn.
           </p>
           <p class="fake-btn">Gửi</p>
         </div>
@@ -57,27 +156,23 @@
 
       <!-- 4. Ý tưởng -->
       <div class="five">
-        <p class="idea-1">Ban đầu mình chỉ định chúc bình thường thôi…</p>
-        <p class="idea-2">Nhưng rồi mình muốn làm nhiều hơn.</p>
+        <p class="idea-1">Em muốn gửi đến chị một món quà nhỏ...</p>
+        <p class="idea-2">Không chỉ là lời chúc bình thường.</p>
         <p class="idea-3">
-          Muốn gửi đến chị một thông điệp<br />
-          <strong>thật đặc biệt</strong>.
+          Mà là điều gì đó<br />
+          <strong>thật lòng hơn</strong>.
         </p>
-        <p class="idea-4">Bởi vì,</p>
+        <p class="idea-4">Bởi vì...</p>
         <p class="idea-5">
-          Chị rất đặc biệt
-          <span>💖</span>
-        </p>
-        <p class="idea-6">
-          <span>B</span>
-          <span>Đ</span>
+          Chị là người đặc biệt
+          <span>.</span>
         </p>
       </div>
 
-      <!-- 5. Ảnh / Video (JS xử lý sau) -->
+      <!-- 5. Ảnh chính với hiệu ứng -->
       <div class="six">
         <img
-          src="./img/1.png"
+          src="./img/bsn.jpg"
           alt="Ảnh kỷ niệm"
           class="profile-picture"
           id="imagePath"
@@ -86,10 +181,8 @@
         <img src="img/hat.svg" alt="hat" class="hat" />
 
         <div class="wish">
-          <h3 class="wish-hbd">Chúc Mừng Sinh Nhật!</h3>
-          <h5 id="wishText">
-            Mong rằng mọi điều may mắn, vui vẻ và hạnh phúc sẽ luôn bên chị 🌸
-          </h5>
+          <h3 class="wish-hbd">Happy Birthday!</h3>
+          <h5 id="wishText">Sinh nhật vui vẻ, bình an và sức khỏe</h5>
         </div>
       </div>
 
@@ -117,13 +210,110 @@
         <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
       </div>
 
-      <!-- 8. Kết -->
+      <!-- 8. Gallery ảnh kỷ niệm -->
+      <div class="gallery-section">
+        <h2 class="gallery-title">Những Khoảnh Khắc Đáng Nhớ</h2>
+        <div class="gallery-container">
+          <button class="gallery-nav prev" id="prevBtn">❮</button>
+          <div class="gallery-wrapper">
+            <img src="./img/1.jpg" alt="Kỷ niệm 1" class="gallery-img active" />
+            <img src="./img/2.jpg" alt="Kỷ niệm 2" class="gallery-img" />
+            <img src="./img/3.png" alt="Kỷ niệm 3" class="gallery-img" />
+            <img src="./img/4.png" alt="Kỷ niệm 4" class="gallery-img" />
+            <img src="./img/5.png" alt="Kỷ niệm 5" class="gallery-img" />
+            <img src="./img/6.png" alt="Kỷ niệm 6" class="gallery-img" />
+            <img src="./img/7.png" alt="Kỷ niệm 7" class="gallery-img" />
+            <img src="./img/8.png" alt="Kỷ niệm 8" class="gallery-img" />
+            <img src="./img/9.png" alt="Kỷ niệm 9" class="gallery-img" />
+            <img src="./img/10.png" alt="Kỷ niệm 10" class="gallery-img" />
+            <img src="./img/11.png" alt="Kỷ niệm 11" class="gallery-img" />
+            <img src="./img/12.png" alt="Kỷ niệm 12" class="gallery-img" />
+            <img src="./img/13.png" alt="Kỷ niệm 13" class="gallery-img" />
+            <img src="./img/15.png" alt="Kỷ niệm 15" class="gallery-img" />
+            <img src="./img/16.png" alt="Kỷ niệm 16" class="gallery-img" />
+            <img src="./img/17.png" alt="Kỷ niệm 17" class="gallery-img" />
+            <img src="./img/18.jpg" alt="Kỷ niệm 18" class="gallery-img" />
+          </div>
+          <button class="gallery-nav next" id="nextBtn">❯</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+        <p class="gallery-caption" id="galleryCaption">
+          Những khoảnh khắc bên nhau
+        </p>
+      </div>
+
+      <!-- Động lực - Triết lý lựa chọn -->
       <div class="nine">
-        <p>Nếu chị thích món quà nhỏ này 💝</p>
-        <p id="replay">Bấm vào đây để xem lại nhé</p>
-        <p class="last-smile">:)</p>
+        <div class="final-container">
+          <p class="final-text-3">
+            em thấy câu này hay nè chị: Khi đứng trước những lựa chọn quan trọng
+            trong cuộc đời, việc chọn lựa chọn nào tốt nhất thật ra không quá
+            quan trọng.
+          </p>
+
+          <p class="final-text-3 highlight">
+            Quan trọng là cách mình biến lựa chọn mình đã chọn
+            <br />
+            thành <strong>lựa chọn tốt nhất</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Phần đặc biệt - Lá thư tâm sự -->
+      <div class="letter-section">
+        <div class="letter-envelope">
+          <div class="letter-paper">
+            <!-- Stamp và dấu bưu điện -->
+            <div class="letter-decorations">
+              <div class="stamp">💝</div>
+              <div class="postmark">27 · 12 · 2025</div>
+            </div>
+
+            <!-- Header -->
+            <div class="letter-header">
+              <p class="letter-greeting">Gửi chị Phương,</p>
+            </div>
+
+            <!-- Nội dung -->
+            <div class="letter-body">
+              <p>Chị Phương à, em rất quý chị.</p>
+
+              <p>
+                Việc thích chị không phải là cảm xúc thoáng qua. Đó là điều em
+                đã suy nghĩ rất nhiều, rất nghiêm túc và cũng rất thật lòng.
+              </p>
+
+              <p>
+                Đến bây giờ, đôi lúc em vẫn chưa biết mình nên lựa chọn như thế
+                nào cho đúng, hay nên bước tiếp ra sao.
+              </p>
+
+              <p>
+                Nhưng có một điều em luôn chắc chắn, khoảng thời gian em và chị
+                ở bên nhau luôn là những kỷ niệm rất đẹp đối với em,cảm ơn chị
+              </p>
+              <p>camonvidaden.</p>
+            </div>
+
+            <!-- Footer -->
+            <div class="letter-footer">
+              <p class="letter-closing">Từ em,</p>
+              <p class="letter-signature">🌸</p>
+            </div>
+
+            <!-- Hoa -->
+            <div class="letter-flowers">
+              <span>🌸</span>
+              <span>🌷</span>
+              <span>🌺</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="floatingHearts"></div>
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -131,7 +321,7 @@
     <!-- Sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- JS xử lý animation & slideshow (làm sau) -->
+    <!-- JS xử lý animation & slideshow -->
     <script src="./script/main.js"></script>
   </body>
 </html>
